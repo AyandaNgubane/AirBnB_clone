@@ -26,8 +26,8 @@ class FileStorage:
     new(self, obj): sets in __objects the obj with key <obj class name>.id
     save(self): serializes __objects to the JSON file (path: __file_path)
     reload(self): deserializes the JSON file to __objects (only if the JSON
-    file (__file_path) exists ; otherwise, do nothing. If the file doesn’t exist,
-    no exception should be raised)
+    file (__file_path) exists ; otherwise, do nothing. If the file doesn’t
+    exist, no exception should be raised)
     """
 
     __file_path = "my_file.json"
@@ -55,7 +55,8 @@ class FileStorage:
         """
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            dict_json = {key: value.to_dict() for key, value in FileStorage.__objects.items()}
+            dict_json = {key: value.to_dict() for
+                         key, value in FileStorage.__objects.items()}
             json.dump(dict_json, f)
 
     def reload(self):
@@ -68,6 +69,6 @@ class FileStorage:
         if path.exists(self.__file_path):
             with open(self.__file_path, mode='r', encoding='utf-8') as f:
                 json_dict = json.load(f)
-            json_dict = {key: eval(value["__class__"])(**value)
-                        for key, value in json_dict.items()}
+            json_dict = {key: eval(value["__class__"])(**value) for
+                         key, value in json_dict.items()}
             FileStorage.__objects = json_dict
