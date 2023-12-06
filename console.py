@@ -134,6 +134,29 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def do_all(self, line):
+        """
+        Prints all string representation of all instances based
+        or not on the class name. Ex: $ all BaseModel or $ all.
+        The printed result must be a list of strings (like the example below)
+        If the class name doesn’t exist,
+        print ** class doesn't exist ** (ex: $ all MyModel)
+        """
+        if line == "" or line is None:
+            new_list = [str(obj) for key, obj in models.storage.all().items()]
+            print(new_list)
+
+        else:
+            c_name = self.parseline(line)[0]
+
+            if c_name not in my_classes:
+                print("** class doesn't exist **")
+            else:
+                new_list = [str(value) for key, value in models.storage.all().items()
+                      if type(value).__name__ == c_name]
+                print(new_list)
+
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
