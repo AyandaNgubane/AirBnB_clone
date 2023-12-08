@@ -36,7 +36,7 @@ class FileStorage:
     exist, no exception should be raised)
     """
 
-    __file_path = "my_file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
