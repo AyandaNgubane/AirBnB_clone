@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 This is the base model of the project, where other classes
 will inherit from

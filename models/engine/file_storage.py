@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 File that will be responsible for sereialization
 and deserialization
