@@ -13,8 +13,8 @@ section.filters button {
 	width: 20%;
 	border: 0;
 	border-radius: 4px;
-	margin-left: auto;
-	margin-right: 30px;
+	float: right;
+	margin: 11px 30px;
 }
 
 section.filters button:hover {
