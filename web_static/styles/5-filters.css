@@ -33,10 +33,16 @@ div.locations {
 
 div.locations h3, div.amenities h3 {
 	font-weight: 600;
-	margin: 10px 0px 0px 0px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	text-align: left;
+	margin-left: 30px;
 }
 div.locations h4, div.amenities h4 {
 	font-weight: 400;
 	font-size: 14px;
-	margin: 0;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+	margin-left: 30px;
 }
